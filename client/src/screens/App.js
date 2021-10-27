@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import UserRoute from "./UserRoute";
 import AdminRoute from "./AdminRoute";
@@ -13,9 +13,9 @@ import { OrderScreen } from "./OrderScreen";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
-      <main>
+      <div>
         <Switch>
           <Route path="/" component={HomeScreen} exact />
           <Route path="/cart" component={CartScreen} exact />
@@ -29,8 +29,8 @@ function App() {
           />
           <UserRoute exact path="/user/dashboard" component={UserDashboard} />
         </Switch>
-      </main>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
 }
 
